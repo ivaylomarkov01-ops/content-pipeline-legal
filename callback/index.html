@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Content Pipeline - OAuth Callback</title>
+    <style>
+        body { font-family: -apple-system, sans-serif; max-width: 500px; margin: 80px auto; text-align: center; color: #333; }
+        code { background: #f0f0f0; padding: 2px 8px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <h1>Authorization Complete</h1>
+    <p>You can close this window. The authorization code has been received.</p>
+    <script>
+        // Extract code from URL and display it
+        const params = new URLSearchParams(window.location.search);
+        const code = params.get('code');
+        if (code) {
+            document.body.innerHTML += '<p>Your authorization code:</p><p><code>' + code + '</code></p><p>Copy this code and paste it into the terminal.</p>';
+        }
+    </script>
+</body>
+</html>
